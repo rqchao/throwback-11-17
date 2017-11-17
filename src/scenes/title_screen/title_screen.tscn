@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://scenes/title_screen/private_media/title_screen_font.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://scenes/title_screen/scripts/fps_counter.gd" type="Script" id=2]
 [ext_resource path="res://scenes/title_screen/private_media/start_button/highlight.png" type="Texture" id=3]
 [ext_resource path="res://scenes/title_screen/private_media/start_button/clicked.png" type="Texture" id=4]
-[ext_resource path="res://scenes/title_screen/private_media/city_street_noise.wav" type="Sample" id=5]
-[ext_resource path="res://scenes/title_screen/scripts/play_title_screen_sound.gd" type="Script" id=6]
+[ext_resource path="res://scenes/title_screen/scripts/go_to_next_scene.gd" type="Script" id=5]
+[ext_resource path="res://scenes/title_screen/private_media/city_street_noise.wav" type="Sample" id=6]
+[ext_resource path="res://scenes/title_screen/private_media/start_button/train_honk.wav" type="Sample" id=7]
+[ext_resource path="res://scenes/title_screen/scripts/play_title_screen_sound.gd" type="Script" id=8]
 
 [sub_resource type="ImageTexture" id=1]
 
@@ -63,7 +65,13 @@ samples/city_street_noise = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 5 )
+"sample": ExtResource( 6 )
+}
+samples/train_honk = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
 }
 
 [node name="title_screen" type="Node2D"]
@@ -110,6 +118,8 @@ enabled_focus_mode = 2
 shortcut = null
 icon = SubResource( 4 )
 flat = true
+script/script = ExtResource( 5 )
+main_scene = ""
 
 [node name="background_noise" type="SamplePlayer2D" parent="."]
 
@@ -118,9 +128,11 @@ params/pitch_scale = 1.0
 params/attenuation/min_distance = 1.0
 params/attenuation/max_distance = 2048.0
 params/attenuation/distance_exp = 1.0
-config/polyphony = 1
+config/polyphony = 2
 config/samples = SubResource( 5 )
 config/pitch_random = 0.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 8 )
+
+[connection signal="pressed" from="start_button" to="start_button" method="_on_start_button_pressed"]
 
 
