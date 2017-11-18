@@ -1,16 +1,7 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://scenes/shop_screen/scripts/Buy_Screen.gd" type="Script" id=1]
-[ext_resource path="res://scenes/shop_screen/ATARISTOCRAT.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://scenes/shop_screen/scripts/Buy_Button.gd" type="Script" id=3]
-
-[sub_resource type="ImageTexture" id=1]
-
-flags = 7
-image = Image()
-size = Vector2( 0, 0 )
-storage = 0
-lossy_quality = 0.7
+[ext_resource path="res://scenes/shop_screen/scripts/ShopButton.gd" type="Script" id=2]
 
 [node name="shop_screen" type="Node2D"]
 
@@ -20,33 +11,49 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 441.0
-margin/top = 30.0
-margin/right = 997.0
-margin/bottom = 441.0
+margin/left = 18.0
+margin/top = 170.0
+margin/right = 574.0
+margin/bottom = 581.0
 popup/exclusive = false
 items = [  ]
+hide_on_item_selection = false
 script/script = ExtResource( 1 )
 
-[node name="Button" type="Button" parent="."]
+[node name="OptionButton" type="OptionButton" parent="."]
 
-hint/tooltip = "Here you can buy items for your journey
-"
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 498.0
-margin/top = 249.0
-margin/right = 725.0
-margin/bottom = 363.0
-custom_fonts/font = ExtResource( 2 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 39.0
+margin/bottom = 20.0
 toggle_mode = false
-click_on_press = true
 enabled_focus_mode = 2
 shortcut = null
-icon = SubResource( 1 )
 flat = false
-script/script = ExtResource( 3 )
+align = 0
+selected = -1
+items = [  ]
+
+[node name="MenuButton" type="MenuButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 417.0
+margin/top = 232.0
+margin/right = 763.0
+margin/bottom = 345.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+flat = true
+items = [  ]
+script/script = ExtResource( 2 )
 
 
