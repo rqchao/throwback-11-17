@@ -1,4 +1,3 @@
-
 extends PopupMenu
 
 # class member variables go here, for example:
