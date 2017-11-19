@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://scenes/shop_screen/ATARISTOCRAT.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://scenes/shop_screen/scripts/ShopButton.gd" type="Script" id=2]
 [ext_resource path="res://scenes/shop_screen/scripts/buy_amount.gd" type="Script" id=3]
 [ext_resource path="res://scenes/shop_screen/scripts/money_amount.gd" type="Script" id=4]
+[ext_resource path="res://scenes/shop_screen/private_media/currency.tex" type="Texture" id=5]
 
 [node name="shop_screen" type="Node2D"]
 
@@ -15,8 +16,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 442.0
 margin/top = 192.0
-margin/right = 788.0
-margin/bottom = 305.0
+margin/right = 562.0
+margin/bottom = 237.0
 custom_fonts/font = ExtResource( 1 )
 toggle_mode = false
 click_on_press = true
@@ -32,33 +33,41 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 389.0
-margin/top = 47.0
-margin/right = 428.0
-margin/bottom = 67.0
+margin/left = 125.0
+margin/top = 12.0
+margin/right = 207.0
+margin/bottom = 32.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+text = "0"
 flat = false
 align = 0
-selected = -1
-items = [  ]
+selected = 0
+items = [ "0", null, false, -1, null, "1", null, false, -1, null, "2", null, false, -1, null ]
 script/script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 
+rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 515.0
-margin/right = 197.0
-margin/bottom = 599.0
+margin/left = 84.0
+margin/top = 484.0
+margin/right = 199.0
+margin/bottom = 516.0
 custom_fonts/font = ExtResource( 1 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 4 )
+
+[node name="currency" type="Sprite" parent="."]
+
+transform/pos = Vector2( 39.6516, 567.756 )
+transform/scale = Vector2( 0.107197, 0.142274 )
+texture = ExtResource( 5 )
 
 

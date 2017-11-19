@@ -11,5 +11,6 @@ func _ready():
 	set_text("Buy Goods!")
 
 func _on_item_pressed(ID):
-	print(global.money - popup.get_item_ID(popup.get_item_index(ID)), " pressed")
+	print(global.money -  popup.get_item_ID(popup.get_item_index(ID)), " pressed")
 	global.money -= popup.get_item_ID(popup.get_item_index(ID))
+	
